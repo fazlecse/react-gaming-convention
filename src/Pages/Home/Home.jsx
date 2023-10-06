@@ -1,8 +1,9 @@
+import Banner from "../../shared/Banner/Banner";
 
 const Home = () => {
     return (
         <div>
-            <h2 className="text-3xl font-chakraPetch">This is home</h2>            
+           <Banner></Banner>
         </div>
     );
 };
