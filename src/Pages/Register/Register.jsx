@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser,profileUpdate } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [registerError, setRegisterError] = useState("");
 
@@ -38,6 +38,13 @@ const Register = () => {
         console.log(user);
         setSuccess("user created successfully");
         toast.success("User Created Successfully/");
+        profileUpdate(name, photoUrl)
+        .then(()=>{
+
+        })
+        .catch(()=>{
+
+        })
       })
       .catch((error) => {
         console.error(error);

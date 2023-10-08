@@ -8,6 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  console.log(user);
   const handleLogOut = () => {
     logOut().then().catch;
   };
@@ -73,7 +74,7 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={profilePhoto} />
+                <img src={user.photoURL} />
               </div>
             </label>
             <ul
@@ -81,7 +82,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <h4>Fazle Rabbi</h4>
+                <h4>{user.displayName}</h4>
               </li>
               <li>
                 <button onClick={handleLogOut}>Logout</button>

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
+  const { logIn, googleLogin } = useContext(AuthContext);
   const handleLogIn = (e) => {
     e.preventDefault();
 
@@ -12,18 +12,19 @@ const Login = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password);
-    
+
     logIn(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        toast.success("loged in successfully")
+        toast.success("loged in successfully");
       })
       .catch((error) => {
         console.error(error.message);
-        toast.error(error.message)
+        toast.error(error.message);
       });
   };
+  // Social login
   return (
     <div className="hero min-h-screen py-10 bg-[url('https://i.ibb.co/RvR2WFk/login-reg-cover.png')] bg-no-repeat bg-cover">
       <div className="hero-content ">
@@ -67,7 +68,10 @@ const Login = () => {
               </button>
             </div>
             <div className="divider">OR</div>
-            <div className="text-center">
+            <div
+              onClick={() => handleSocialLogin(googleLogin)}
+              className="text-center"
+            >
               <button className="btn btn-circle text-xl">
                 <FcGoogle></FcGoogle>
               </button>
