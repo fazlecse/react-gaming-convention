@@ -25,6 +25,11 @@ const Login = () => {
       });
   };
   // Social login
+  const handleSocialLogin = (media) => {
+    media()
+      .then(() => toast.success("Successfully log in"))
+      .catch((error) => toast.error(error.message));
+  };
   return (
     <div className="hero min-h-screen py-10 bg-[url('https://i.ibb.co/RvR2WFk/login-reg-cover.png')] bg-no-repeat bg-cover">
       <div className="hero-content ">
@@ -70,6 +75,7 @@ const Login = () => {
             <div className="divider">OR</div>
             <div
               onClick={() => handleSocialLogin(googleLogin)}
+              // onClick={handleSocialLogin}
               className="text-center"
             >
               <button className="btn btn-circle text-xl">

@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 const Register = () => {
-  const { createUser,profileUpdate } = useContext(AuthContext);
+  const { createUser, profileUpdate, googleLogin } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [registerError, setRegisterError] = useState("");
 
@@ -22,14 +22,13 @@ const Register = () => {
     if (password.length < 6) {
       toast.error("Password should be at least 6 characters or longer");
       return;
-    }else if(!/[A-Z]/.test(password)){
-        toast.error("Password should have at least one Upper case characters.");
-        return;
-    }else if(!/(?=.*[!@#$%^&*])/.test(password)){
-        toast.error("Password should have at least one special characters.");
-        return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Password should have at least one Upper case characters.");
+      return;
+    } else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+      toast.error("Password should have at least one special characters.");
+      return;
     }
-
 
     // Create user
     createUser(email, password)
@@ -39,18 +38,20 @@ const Register = () => {
         setSuccess("user created successfully");
         toast.success("User Created Successfully/");
         profileUpdate(name, photoUrl)
-        .then(()=>{
-
-        })
-        .catch(()=>{
-
-        })
+          .then(() => {})
+          .catch(() => {});
       })
       .catch((error) => {
         console.error(error);
         setRegisterError(error.message);
         toast.error(error.message);
       });
+  };
+  // Social login
+  const handleSocialLogin = (media) => {
+    media()
+      .then(() => toast.success("Successfully log in"))
+      .catch((error) => toast.error(error.message));
   };
 
   return (
@@ -120,7 +121,10 @@ const Register = () => {
             </div>
             <div className="divider">OR</div>
             <div className="text-center">
-              <button className="btn btn-circle text-xl">
+              <button
+                onClick={()=> handleSocialLogin(googleLogin)}
+                className="btn btn-circle text-xl"
+              >
                 <FcGoogle></FcGoogle>
               </button>
             </div>
