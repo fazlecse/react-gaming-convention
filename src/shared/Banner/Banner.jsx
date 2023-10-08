@@ -4,10 +4,10 @@ const Banner = () => {
     <div className="bg-[url('https://i.ibb.co/r2CHB2Y/banner-bg.png')] bg-no-repeat bg-cover">
       <div className="container mx-auto p-3 sm:p-0 text-center -mt-[85px]">
         <div className="pt-48 pb-10 space-y-5">
-          <h2 className="text-4xl font-bold font-chakraPetch text-[#00FADF]">
+          <h2 className="text-2xl sm:text-4xl font-bold font-chakraPetch text-[#00FADF]">
             PLAY UNLIMITED
           </h2>
-          <h1 className="text-7xl font-bold font-chakraPetch text-white">
+          <h1 className="text-3xl md:text-7xl font-bold font-chakraPetch text-white">
             TOURNAMENTS
           </h1>
           <p className="text-lg text-white max-w-xl mx-auto">

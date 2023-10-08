@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo-light.png";
-import profilePhoto from "../../assets/young-bearded-man-with-striped-shirt.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -8,7 +7,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
-  console.log(user);
   const handleLogOut = () => {
     logOut().then().catch;
   };
@@ -22,6 +20,25 @@ const Navbar = () => {
       >
         Home
       </NavLink>
+
+      <NavLink
+        to="/aboutDetails"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-[#00FADF] " : ""
+        }
+      >
+        About
+      </NavLink>
+
+      <NavLink
+        to="/feature"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-[#00FADF] " : ""
+        }
+      >
+        Feature
+      </NavLink>
+
       <NavLink
         to="/login"
         className={({ isActive, isPending }) =>

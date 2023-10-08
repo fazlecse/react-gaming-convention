@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 const Register = () => {
   const { createUser, profileUpdate, googleLogin } = useContext(AuthContext);
-  const [success, setSuccess] = useState("");
-  const [registerError, setRegisterError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -15,9 +14,6 @@ const Register = () => {
     const photoUrl = form.get("photoUrl");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(password);
-    setSuccess("");
-    setRegisterError("");
 
     if (password.length < 6) {
       toast.error("Password should be at least 6 characters or longer");
@@ -35,22 +31,24 @@ const Register = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        setSuccess("user created successfully");
         toast.success("User Created Successfully/");
+        navigate("/");
         profileUpdate(name, photoUrl)
           .then(() => {})
           .catch(() => {});
       })
       .catch((error) => {
         console.error(error);
-        setRegisterError(error.message);
         toast.error(error.message);
       });
   };
   // Social login
   const handleSocialLogin = (media) => {
     media()
-      .then(() => toast.success("Successfully log in"))
+      .then(() => {
+        toast.success("Successfully log in");
+        navigate("/");
+      })
       .catch((error) => toast.error(error.message));
   };
 
@@ -122,7 +120,7 @@ const Register = () => {
             <div className="divider">OR</div>
             <div className="text-center">
               <button
-                onClick={()=> handleSocialLogin(googleLogin)}
+                onClick={() => handleSocialLogin(googleLogin)}
                 className="btn btn-circle text-xl"
               >
                 <FcGoogle></FcGoogle>

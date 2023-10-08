@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 const Login = () => {
   const { logIn, googleLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogIn = (e) => {
     e.preventDefault();
 
@@ -18,6 +20,7 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         toast.success("loged in successfully");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error.message);
@@ -27,7 +30,10 @@ const Login = () => {
   // Social login
   const handleSocialLogin = (media) => {
     media()
-      .then(() => toast.success("Successfully log in"))
+      .then(() => {
+        toast.success("Successfully log in");
+        navigate("/")
+      })
       .catch((error) => toast.error(error.message));
   };
   return (
