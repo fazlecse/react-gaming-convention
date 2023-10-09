@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 const Root = () => {
     return (
-        <div className="bg-[#0E063D]">
+        <div className="bg-[#0E063D] overflow-hidden">
             <Navbar></Navbar>
             <Outlet></Outlet> 
             <Footer></Footer>  

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ card }) => {
   const { id, image1, name, price, short_description } = card || {};
   return (
-    <div className="p-5 border flex flex-col sm:flex-row text-center sm:text-left gap-5 text-white items-center">
+    <div className="p-5 border flex flex-col sm:flex-row text-center sm:text-left gap-5 text-white items-center" >
       <figure>
         <img src={image1} alt="" />
       </figure>

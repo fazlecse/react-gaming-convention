@@ -8,13 +8,13 @@ const HowItWork = () => {
   return (
     <div className="py-20">
     <div className="container mx-auto p-3 sm:p-0 text-white bg-cover ">
-      <div className="mb-20 text-center">
+      <div className="mb-20 text-center" data-aos="fade-up">
         <h2 className="text-3xl md:text-5xl font-bold font-chakraPetch mb-5">
           HOW IT WORKS
         </h2>
         <p>It's easier than you think. Follow 4 simple easy steps</p>
       </div>
-      <div className="mt-5 grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="mt-5 grid sm:grid-cols-2 md:grid-cols-4 gap-10" data-aos="fade-down">
         <div className="text-center">
           <div className="mx-auto w-[70px] h-[70px] bg-[#4609C3] rounded-lg text-3xl flex items-center justify-center relative">
             <FaCircleUser></FaCircleUser>

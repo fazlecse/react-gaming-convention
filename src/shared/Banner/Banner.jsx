@@ -15,7 +15,7 @@ const Banner = () => {
             real money eSports
           </p>
         </div>
-        <div>
+        <div data-aos="fade-up">
           <img className="mx-auto" src={bannerImg1} alt="" />
         </div>
       </div>

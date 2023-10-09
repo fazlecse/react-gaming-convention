@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="container mx-auto p-3 sm:p-0 bg-[url('https://i.ibb.co/KWbcTHR/footer-bg.png')] rounded-lg">
@@ -11,10 +13,10 @@ const Footer = () => {
         </nav>
         <nav>
           <header className="footer-title">Company</header>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to={"/aboutDetails"} className="link link-hover">About us</Link>
+          <Link to={"/feature"} className="link link-hover">Featuer</Link>
+          <Link to={"/login"} className="link link-hover">login</Link>
+          <Link to={"/register"} className="link link-hover">Register</Link>
         </nav>
         <nav>
           <header className="footer-title">Legal</header>
