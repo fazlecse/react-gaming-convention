@@ -2,7 +2,7 @@ import bannerImg1 from "../../assets/game-charecters.png";
 const Banner = () => {
   return (
     <div className="bg-[url('https://i.ibb.co/r2CHB2Y/banner-bg.png')] bg-no-repeat bg-cover">
-      <div className="container mx-auto p-3 sm:p-2 text-center -mt-[85px]">
+      <div className="container mx-auto p-3 sm:p-2 text-center -mt-[96gitpx]">
         <div className="pt-48 pb-10 space-y-5">
           <h2 className="text-2xl sm:text-4xl font-bold font-chakraPetch text-[#00FADF]">
             PLAY UNLIMITED

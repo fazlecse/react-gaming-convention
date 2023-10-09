@@ -48,9 +48,9 @@ const Navbar = () => {
         Login
       </NavLink>
     </>
-  );
+);
   return (
-    <div className="navbar container mx-auto p-3 sm:p-2 text-center">
+    <div className="navbar container mx-auto p-3 sm:p-0 text-center">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
