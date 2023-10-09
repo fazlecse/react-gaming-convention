@@ -1,8 +1,4 @@
-import {
-  FaBagShopping,
-  FaCircleUser,
-  FaHospitalUser,
-} from "react-icons/fa6";
+import { FaBagShopping, FaCircleUser, FaHospitalUser } from "react-icons/fa6";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import { GiSpeedBoat } from "react-icons/gi";
 import { SiLevelsdotfyi } from "react-icons/si";
@@ -10,14 +6,17 @@ import { SiLevelsdotfyi } from "react-icons/si";
 const Feature = () => {
   return (
     <div className="py-20">
-      <div className="container mx-auto p-3 sm:p-0 text-white bg-cover ">
+      <div className="container mx-auto p-3 sm:p-2 text-white bg-cover ">
         <div className="mb-20 text-center" data-aos="fade-up">
           <h2 className="text-5xl font-bold font-chakraPetch mb-5">
             ALACTIC GAMES FEATURES
           </h2>
           <p>The biggest esports tournaments anytime, anywhere</p>
         </div>
-        <div className="mt-5 grid sm:grid-cols-2 md:grid-cols-3 gap-8" data-aos="fade-down">
+        <div
+          className="mt-5 grid sm:grid-cols-2 md:grid-cols-3 gap-8"
+          data-aos="fade-down"
+        >
           <div className="text-center space-y-2">
             <div className="mx-auto w-[70px] h-[70px] bg-[#4609C3] rounded-lg text-3xl flex items-center mb-8 justify-center">
               <FaCircleUser></FaCircleUser>

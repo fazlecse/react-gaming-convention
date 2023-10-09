@@ -27,7 +27,7 @@ const ServiceDetails = () => {
           </div>
         </div>
         <div className="">
-          <div className="container mx-auto p-3 sm:p-0">
+          <div className="container mx-auto p-3 sm:p-2">
             <div className="bg-[#130757] py-20 px-10 grid grid-cols-2 gap-4 items-center ">
               <div>
                 <h1 className="text-5xl text-white font-chakraPetch font-semibold">
@@ -79,40 +79,47 @@ const ServiceDetails = () => {
                 </div>
                 <div>
                   <h1 className="text-2xl text-white font-chakraPetch font-semibold mt-10 mb-5">
-                  PRIZE CLAIM
+                    PRIZE CLAIM
                   </h1>
                   <ul className="space-y-2">
                     <li className="text-lg text-white">
-                    Prize claims must be completed within 24 hours of the end of the
+                      Prize claims must be completed within 24 hours of the end
+                      of the
                     </li>
                     <li className="text-lg text-white">
-                    tournament otherwise risk penalty of the prize. Claims can take up to 72
+                      tournament otherwise risk penalty of the prize. Claims can
+                      take up to 72
                     </li>
                     <li className="text-lg text-white">
-                    hours to be processed.
+                      hours to be processed.
                     </li>
-                    
                   </ul>
                 </div>
                 <div>
                   <h1 className="text-2xl text-white font-chakraPetch font-semibold mt-10 mb-5">
-                  RULES
+                    RULES
                   </h1>
                   <ul className="space-y-2">
                     <li className="text-lg text-white">
-                    Please be respectful to your host and other participants. If any malicious behavior is reported, you will be removed from the tournament.
+                      Please be respectful to your host and other participants.
+                      If any malicious behavior is reported, you will be removed
+                      from the tournament.
                     </li>
                     <li className="text-lg text-white">
-                    Please be on time for your registration and for the actual tournament. You (and your team) will be disqualified on no-show.
+                      Please be on time for your registration and for the actual
+                      tournament. You (and your team) will be disqualified on
+                      no-show.
                     </li>
                     <li className="text-lg text-white">
-                    You and all of your teammates must be registered to qualify for the event.
+                      You and all of your teammates must be registered to
+                      qualify for the event.
                     </li>
-                    
+
                     <li className="text-lg text-white">
-                    You can play in this tournament only if your registered and in-game names match, otherwise you will be disqualified.
+                      You can play in this tournament only if your registered
+                      and in-game names match, otherwise you will be
+                      disqualified.
                     </li>
-                    
                   </ul>
                 </div>
               </div>
