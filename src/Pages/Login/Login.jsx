@@ -32,21 +32,21 @@ const Login = () => {
     media()
       .then(() => {
         toast.success("Successfully log in");
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => toast.error(error.message));
   };
   return (
     <div className="hero min-h-screen py-10 bg-[url('https://i.ibb.co/RvR2WFk/login-reg-cover.png')] bg-no-repeat bg-cover">
-      <div className="hero-content ">
+      <div className="hero-content  text-white ">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#4609C3]">
-          <form onSubmit={handleLogIn} className="card-body ">
+          <form onSubmit={handleLogIn} className="card-body">
             <h1 className="text-3xl text-white font-chakraPetch font-semibold">
               Welcome To Galactic
             </h1>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-white text-white">Email</span>
               </label>
               <input
                 type="email"
@@ -58,7 +58,7 @@ const Login = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-white">Password</span>
               </label>
               <input
                 type="password"
@@ -68,7 +68,10 @@ const Login = () => {
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <a
+                  href="#"
+                  className="label-text text-white link link-hover"
+                >
                   Forgot password?
                 </a>
               </label>
