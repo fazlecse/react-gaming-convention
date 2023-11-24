@@ -39,10 +39,10 @@ const AuthProvider = ({ children }) => {
   };
 
   //  LogOut
-  const logOut = () => {
-    setLoading(true);
-    return signOut(auth);
-  };
+    const logOut = () => {
+      setLoading(true);
+      return signOut(auth);
+    };
 
   //  Login
   const logIn = (email, password) => {
